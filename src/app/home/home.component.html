@@ -1,0 +1,32 @@
+<div>
+  <div style="float: right;">
+    <button routerLink="/list">Add Listing</button>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>image</td>
+        <td>song name</td>
+        <td>desc</td>
+        <td>play</td>
+        <td>delete</td>
+      </tr>
+      <tr *ngFor="let song of allsongs">
+        <td>
+          <img [id]="song.sid" [attr.src]="this.http.url+'images/'+song.imageName" style="height: 50px;width:50px;">
+        </td>
+        <td>{{song.name}}</td>
+        <td>{{song.desc}}</td>
+        <td>
+          <button (click)="playSong(song.songName)" >Play</button>
+        </td>
+        <td>
+          <button (click)="pauseplay()" >Pause</button>
+        </td>
+        <td><button (click)="deleteListing(song.sid)">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+

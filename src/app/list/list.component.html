@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-2">
+      <form #form="ngForm" (ngSubmit)="save()" class="form-group-lg">
+        <div class="table">
+          <table>
+            <tr>
+              <td>Song Name:</td>
+              <td><input type="text" required class="form-control" name="name" [(ngModel)]="name"/> </td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td><textarea rows="5" cols="80" required class="form-control" name="desc" [(ngModel)]="desc"></textarea> </td>
+            </tr>
+            <td>Upload Image</td>
+            <input class="form-control" required type="file"
+            (change)="onChange($event)">
+            <tr>
+              <td><input class="form-control btn btn-primary" [disabled]="!form.form.valid" name="submit" value="save" type="submit"></td>
+            </tr>
+          </table>
+        </div>
+        </form>
+    </div>
+</div>
+</div>

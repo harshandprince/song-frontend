@@ -1,0 +1,47 @@
+<div class="container" style="background-color:darkseagreen;">
+  <div class="row col-sm-8 offset-sm-4">
+  <form #loginForm="ngForm" style="padding-top:80px;margin-bottom: 100px;" (ngSubmit)="login()" class="form-group-lg">
+  <br>
+       <table>
+          <tr>
+              <td>Email:&nbsp;</td>
+              <td colspan="3"><input required placeholder="please enter your email" class="form-control" type="email" name="email" [(ngModel)]="email" #e="ngModel" [email]="true"></td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+              <td colspan="3">
+                  <div [hidden]="e.valid||e.pristine" class="alert alert-danger">
+                      please enter your valid email
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>Password:&nbsp;</td>
+              <td colspan="3"><input required placeholder="please enter your password" class="form-control" type="password" name="password" [(ngModel)]="password" #pass="ngModel"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div [hidden]="pass.valid||pass.pristine" class="alert alert-danger">
+                        please enter your password
+                        </div>
+                </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                  <td><input class="btn btn-primary btn-block form-control" [disabled]="!loginForm.form.valid" name="submit" value="Login" type="submit"></td>
+                </tr>
+             </table>
+        </form>
+      </div>
+        </div>
